@@ -66,4 +66,21 @@ def loop_step(sqs):
                 logger.exception(e)
 ```
 
+to post to the http server we can use requets
+```python
+import requests
+import json
+
+from settings import HTTP_ENDPOINT, AUTH_BEARER_TOKEN
+
+def do_post(body):
+    requests.post(
+        url=HTTP_ENDPOINT,
+        data=json.dumps(body),
+        headers={
+            'Authorization': AUTH_BEARER_TOKEN,
+            'Content-Type': 'application/json'
+        })
+```
+
 With this simple script you can set up a web server that process all incoming SQS messages.
