@@ -1,6 +1,6 @@
 # SQS2HTTP
 
-Simpe service that listen to a sqs queue and bypass the payload to a http server, sending a POST request with the 
+Simple service that listen to a sqs queue and bypass the payload to a http server, sending a POST request with the 
 SQS's payload and a Bearer Token
 
 
