@@ -35,13 +35,17 @@ def remove_from_sqs(sqs, receipt_handle):
 
 
 def do_post(body):
+    headers = {
+        'Authorization': AUTH_BEARER_TOKEN,
+        'Content-Type': 'application/json'
+    }
+    if AUTH_BEARER_TOKEN:
+        headers[AUTH_BEARER_TOKEN] = AUTH_BEARER_TOKEN
+
     requests.post(
         url=HTTP_ENDPOINT,
         data=json.dumps(body),
-        headers={
-            'Authorization': AUTH_BEARER_TOKEN,
-            'Content-Type': 'application/json'
-        })
+        headers=headers)
 
 
 def loop_step(sqs):
