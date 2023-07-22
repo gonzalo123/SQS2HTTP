@@ -66,7 +66,7 @@ def loop_step(sqs):
                 logger.exception(e)
 ```
 
-to post to the http server we can use requets
+to post to the http server we can use requests
 ```python
 import requests
 import json
