@@ -1,10 +1,10 @@
 # SQS2HTTP
 
-Simple service that listen to a sqs queue and bypass the payload to a http server, sending a POST request with the 
-SQS's payload and a Bearer Token
+Simple service that listens to a sqs queue and bypass the payload to a http server, sending a POST request with the 
+SQS's payload and a Bearer Token.
 
 
-The main script read a .env file with the aws credentials and http endpoint
+The main script read a .env file with the aws credentials and http endpoint.
 
 ```dotenv
 # AWS CREDENTIALS
@@ -66,7 +66,8 @@ def loop_step(sqs):
                 logger.exception(e)
 ```
 
-to post to the http server we can use requests
+To post to the http server we can use requests.
+
 ```python
 import requests
 import json
